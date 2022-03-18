@@ -2,6 +2,7 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/wait.h>
+#include <signal.h>
 
 int main(int argc, char const *argv[])
 {
@@ -11,24 +12,11 @@ int main(int argc, char const *argv[])
 
     pid = fork();
 
-    wait(&status);
-
-    if (pid !=0)
+    if (pid == 0)
     {
-        printf("Father\n");
-        printf("PID: %d\n",pid);
-    }else
-    {
-        printf("Son\n");
-        printf("PID: %d\n",pid);
-        signal();
+        printf("Hijo\n");
+        
     }
-    
-
-    printf("Estatus %d\n", status);
-    
-
-
 
     return 0;
 }
