@@ -3,7 +3,9 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 
-int main(){
+int main(int argc, char const *argv[])
+{
+    
     int pid;
     int status;
 
@@ -14,16 +16,19 @@ int main(){
     if (pid !=0)
     {
         printf("Father\n");
-        printf("PID: %d\n",getpid());
+        printf("PID: %d\n",pid);
     }else
     {
         printf("Son\n");
-        printf("PID: %d\n",getpid());
+        printf("PID: %d\n",pid);
+        signal();
     }
-
-    printf("%d\n",status);
     
+
+    printf("Estatus %d\n", status);
+    
+
+
 
     return 0;
 }
-
