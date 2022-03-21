@@ -37,6 +37,8 @@ int main(int argc, char const *argv[])
     {
 
         printf("Father, pid: %d , ppid: %d\n",getpid(), getppid());
+        signal(SIGTSTP, sigManager);
+        signal(SIGINT, sigManager);
 
     }
     
