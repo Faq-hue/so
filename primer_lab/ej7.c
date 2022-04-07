@@ -57,7 +57,6 @@ void sigManager(int sigNum){
 
     if (sigNum == 20)
     {
-        printf("atrevetetete mueve el ojete\n");
         signal(SIGTSTP, SIG_IGN);
         kill(getpid(),9);
     }
